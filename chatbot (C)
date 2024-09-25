@@ -1,0 +1,159 @@
+#include<stdio.h>
+#include<string.h>
+
+int main()
+{
+    char order[100], ch;
+    int i, foodCost, drinksCost, totalCost;
+    
+    // Greeting
+    printf("\nWelcome to our Cafe.\n");
+    printf("How can I help you today?\n");
+    printf("\nPlease enter your order (e.g. food/drinks): ");
+    scanf("%s", order);
+    
+    // Check if order is food
+    if (strcmp(order, "food") == 0)
+    {
+        foodCost = 0;
+        printf("\nPlease select from the following food items:\n");
+        printf("1. Burger - Rs.100\n");
+        printf("2. Pizza - Rs.200\n");
+        printf("3. Sandwich - Rs.50\n");
+        printf("4. Cake - Rs.50\n");
+        printf("\nPlease enter your choice: ");
+        scanf("%d", &i);
+        switch (i)
+        {
+            case 1:
+            foodCost += 100;
+            break;
+            
+            case 2:
+            foodCost += 200;
+            break;
+            
+            case 3:
+            foodCost += 50;
+            break;
+            
+            case 4:
+            foodCost +=50;
+            break;
+        }
+        printf("\nDo you want to order something else (y/n)? ");
+        scanf(" %c", &ch);
+    }
+    // Check if order is drinks
+    else if (strcmp(order, "drinks") == 0)
+    {
+        drinksCost = 0;
+        printf("\nPlease select from the following drinks:\n");
+        printf("1. Soda - Rs.50\n");
+        printf("2. Juice - Rs.80\n");
+        printf("3. Tea - Rs.30\n");
+        printf("4. Coffee - Rs.40\n");
+        printf("\nPlease enter your choice: ");
+        scanf("%d", &i);
+        switch (i)
+        {
+            case 1:
+            drinksCost += 50;
+            break;
+            
+            case 2:
+            drinksCost += 80;
+            break;
+            
+            case 3:
+            drinksCost += 30;
+            break;
+            
+            case 4:
+            drinksCost +=40;
+            break;
+        }
+        printf("\nDo you want to order something else (y/n)? ");
+        scanf(" %c", &ch);
+    }
+    
+    // Take further order
+    while (ch == 'y')
+    {
+        printf("\nPlease enter your order (e.g. food/drinks): ");
+        scanf("%s", order);
+        if (strcmp(order, "food") == 0)
+        {
+            printf("\nPlease select from the following food items:\n");
+            printf("1. Burger - Rs.100\n");
+            printf("2. Pizza - Rs.200\n");
+            printf("3. Sandwich - Rs.50\n");
+            printf("4. Cake - Rs.50\n");
+            printf("\nPlease enter your choice: ");
+            scanf("%d", &i);
+            switch (i)
+            {
+                case 1:
+                foodCost += 100;
+                break;
+                
+                case 2:
+                foodCost += 200;
+                break;
+                
+                case 3:
+                foodCost += 50;
+                break;
+                
+                case 4:
+                foodCost +=50;
+                break;
+            }
+            printf("\nDo you want to order something else (y/n)? ");
+            scanf(" %c", &ch);
+        }
+        else if (strcmp(order, "drinks") == 0)
+        {
+            printf("\nPlease select from the following drinks:\n");
+            printf("1. Soda - Rs.50\n");
+            printf("2. Juice - Rs.80\n");
+            printf("3. Tea - Rs.30\n");
+            printf("4. Coffee - Rs.40\n");
+            printf("\nPlease enter your choice: ");
+            scanf("%d", &i);
+            switch (i)
+            {
+                case 1:
+                drinksCost += 50;
+                break;
+                
+                case 2:
+                drinksCost += 80;
+                break;
+                
+                case 3:
+                drinksCost += 30;
+                break;
+                
+                case 4:
+                drinksCost +=40;
+                break;
+            }
+            printf("\nDo you want to order something else (y/n)? ");
+            scanf(" %c", &ch);
+        }
+    }
+    
+    // Calculate total cost
+    totalCost = foodCost + drinksCost;
+    
+    // Checkout
+    printf("\nThe total cost of your order is Rs. %d.\n", totalCost);
+    printf("Please proceed to checkout.\n");
+    
+    // Thank you
+    printf("\nThank you for visiting our cafe.\n");
+    printf("Hope to see you again soon.\n");
+    
+    return 0;
+}
