@@ -1,0 +1,62 @@
+def cafe_order():
+    food_cost = 0
+    drinks_cost = 0
+    total_cost = 0
+    
+    print("\nWelcome to our Cafe.")
+    print("How can I help you today?")
+    
+    while True:
+        order = input("\nPlease enter your order (e.g. food/drinks): ").lower()
+        
+        if order == "food":
+            print("\nPlease select from the following food items:")
+            print("1. Burger - Rs.100")
+            print("2. Pizza - Rs.200")
+            print("3. Sandwich - Rs.50")
+            print("4. Cake - Rs.50")
+            choice = int(input("\nPlease enter your choice: "))
+            
+            match choice:
+                case 1:
+                    food_cost += 100
+                case 2:
+                    food_cost += 200
+                case 3:
+                    food_cost += 50
+                case 4:
+                    food_cost += 50
+                case _:
+                    print("Invalid choice")
+        
+        elif order == "drinks":
+            print("\nPlease select from the following drinks:")
+            print("1. Soda - Rs.50")
+            print("2. Juice - Rs.80")
+            print("3. Tea - Rs.30")
+            print("4. Coffee - Rs.40")
+            choice = int(input("\nPlease enter your choice: "))
+            
+            match choice:
+                case 1:
+                    drinks_cost += 50
+                case 2:
+                    drinks_cost += 80
+                case 3:
+                    drinks_cost += 30
+                case 4:
+                    drinks_cost += 40
+                case _:
+                    print("Invalid choice")
+        
+        more = input("\nDo you want to order something else (y/n)? ").lower()
+        if more != 'y':
+            break
+    
+    total_cost = food_cost + drinks_cost
+    print(f"\nThe total cost of your order is Rs. {total_cost}.")
+    print("Please proceed to checkout.")
+    print("\nThank you for visiting our cafe.")
+    print("Hope to see you again soon.")
+
+cafe_order()
