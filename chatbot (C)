@@ -6,13 +6,11 @@ int main()
     char order[100], ch;
     int i, foodCost, drinksCost, totalCost;
     
-    // Greeting
     printf("\nWelcome to our Cafe.\n");
     printf("How can I help you today?\n");
     printf("\nPlease enter your order (e.g. food/drinks): ");
     scanf("%s", order);
     
-    // Check if order is food
     if (strcmp(order, "food") == 0)
     {
         foodCost = 0;
@@ -44,7 +42,6 @@ int main()
         printf("\nDo you want to order something else (y/n)? ");
         scanf(" %c", &ch);
     }
-    // Check if order is drinks
     else if (strcmp(order, "drinks") == 0)
     {
         drinksCost = 0;
@@ -77,7 +74,6 @@ int main()
         scanf(" %c", &ch);
     }
     
-    // Take further order
     while (ch == 'y')
     {
         printf("\nPlease enter your order (e.g. food/drinks): ");
@@ -144,14 +140,11 @@ int main()
         }
     }
     
-    // Calculate total cost
     totalCost = foodCost + drinksCost;
     
-    // Checkout
     printf("\nThe total cost of your order is Rs. %d.\n", totalCost);
     printf("Please proceed to checkout.\n");
     
-    // Thank you
     printf("\nThank you for visiting our cafe.\n");
     printf("Hope to see you again soon.\n");
     
